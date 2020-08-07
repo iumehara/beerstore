@@ -1,0 +1,4 @@
+rootProject.name = 'BeerStoreServices'
+
+include "app:customersupport"
+include "app:brewery"
