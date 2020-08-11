@@ -1,5 +1,7 @@
 package io.umehara.beerstore.v1.brewery
 
+import io.umehara.beerstore.v1.brewery.domain.Brewery
+import io.umehara.beerstore.v1.brewery.domain.BreweryDetail
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -9,18 +11,15 @@ import reactor.core.publisher.Mono
 
 @RestController
 @RequestMapping("v1/breweries")
-class BreweriesController() {
+class BreweriesController(val breweryService: BreweryService) {
 
     @GetMapping
     fun index(): Flux<Brewery> {
-        return Flux.just(
-                Brewery(1, "Asahi"),
-                Brewery(2, "Kirin")
-        )
+        return breweryService.getAll()
     }
 
     @GetMapping("{id}")
-    fun show(@PathVariable id: Int): Mono<Brewery> {
-        return Mono.just(Brewery(1, "Asahi"))
+    fun show(@PathVariable id: Int): Mono<BreweryDetail> {
+        return breweryService.find(id)
     }
 }
