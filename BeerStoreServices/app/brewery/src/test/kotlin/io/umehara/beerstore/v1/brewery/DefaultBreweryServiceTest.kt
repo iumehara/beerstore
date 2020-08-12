@@ -3,6 +3,8 @@ package io.umehara.beerstore.v1.brewery
 import io.umehara.beerstore.v1.brewery.domain.Beer
 import io.umehara.beerstore.v1.brewery.domain.Brewery
 import io.umehara.beerstore.v1.brewery.domain.BreweryDetail
+import io.umehara.beerstore.v1.brewery.repo.StubSpyBeerRepo
+import io.umehara.beerstore.v1.brewery.repo.StubSpyBreweryRepo
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.util.Arrays.asList

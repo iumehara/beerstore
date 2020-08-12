@@ -1,9 +1,7 @@
 @file:Suppress("PropertyName")
 
-package io.umehara.beerstore.v1.brewery
+package io.umehara.beerstore.v1.brewery.repo
 
-import io.umehara.beerstore.v1.brewery.repo.BreweryRepo
-import io.umehara.beerstore.v1.brewery.repo.BrewerySchema
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
