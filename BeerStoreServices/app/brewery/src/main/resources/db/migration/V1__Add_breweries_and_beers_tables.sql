@@ -1,6 +1,3 @@
-drop table if exists beers;
-drop table if exists breweries;
-
 create table breweries (
     id serial primary key,
     name varchar

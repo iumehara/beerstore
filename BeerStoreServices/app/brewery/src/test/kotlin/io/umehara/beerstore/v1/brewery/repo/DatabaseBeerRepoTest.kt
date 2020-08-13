@@ -14,7 +14,8 @@ class DatabaseBeerRepoTest {
     @BeforeEach
     fun setUp() {
         val dataSource = EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2)
-                .addScript("classpath:db/schema.sql")
+                .addScript("classpath:db/test-setup.sql")
+                .addScript("classpath:db/migration/V1__Add_breweries_and_beers_tables.sql")
                 .addScript("classpath:db/seed.sql")
                 .build()
         jdbcTemplate = JdbcTemplate(dataSource)
